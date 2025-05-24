@@ -1,0 +1,32 @@
+[33m3f11185e7997[m[33m ([m[1;36mHEAD -> [m[1;32mVoyager-SukiSU[m[33m, [m[1;31morigin/Voyager-SukiSU[m[33m)[m KernelSU: Fix compile warning ISO C99 forbids mixed declarations and code
+[33m8e9384f0b87e[m KernelSU: integrate scope-minimized manual hooks -k4.9 v1.4
+[33m7d8495dd0ed8[m kernel: ptrace: Reset ptrace_message on ptrace_check_attach unconditionally
+[33m6b479ca4c032[m BACKPORT: fs/namespace.c path_umount
+[33m56ec4af654f6[m BACKPORT: fs/namespace.c path_umount
+[33m80471dbab021[m BACKPORT: fs/namespace.c path_umount
+[33mb4895f6533e5[m securemsm-kernel: Fixed multiple listener registration on same fd
+[33md070d067f4de[m Merge "msm: kgsl: Fix error handling during drawctxt switch"
+[33me3c00d7d2edf[m Merge "soc: qcom: smem: Add boundary checks for partitions"
+[33m93ebe4290426[m msm: kgsl: Fix error handling during drawctxt switch
+[33ma836d3843c3e[m Merge "Revert "soc: qcom: smem: Add boundary checks for partitions""
+[33m0a04b7cb828e[m soc: qcom: smem: Add boundary checks for partitions
+[33md9ab9e390b0c[m Revert "soc: qcom: smem: Add boundary checks for partitions"
+[33m281bf31a097a[m msm: kgsl: Update the protect register list
+[33ma0e4ff8231f1[m soc: qcom: smem: Add boundary checks for partitions
+[33mf3dac190688d[m msm: kgsl: Do not free sharedmem if it cannot be unmapped
+[33m5c696e677f37[m msm: ADSPRPC: Add reference count for context map
+[33mda08a7e69d10[m Revert "msm: adsprpc: Handle UAF in fastrpc internal munmap"
+[33mebf333b057d5[m Merge "msm: kgsl: Prevent wrap around during user address mapping"
+[33mc98ad9d27f2a[m msm: adsprpc: Handle UAF in fastrpc internal munmap
+[33mb71c7c60b438[m iommu: Fix missing return check of arm_lpae_init_pte
+[33mbc67cd00bc0b[m msm: kgsl: Prevent wrap around during user address mapping
+[33m046ed9a35a04[m bus: mhi: misc: Add check for dev_rp if it is iommu range or not
+[33ma9cc7972f592[m pinctrl: qcom: Using readl_relaxed/writel_relaxed APIs
+[33mbf2c8a52cb28[m msm: kgsl: Keep postamble packets in a privileged buffer
+[33me1f0a93302af[m Merge "msm: kgsl: Use dma_buf_get() to get dma_buf structure"
+[33mbfef24a050a0[m Merge "msm: kgsl: Make sure that pool pages don't have any extra references"
+[33m82331c3f135e[m msm: kgsl: Make sure that pool pages don't have any extra references
+[33mdd55e8a14781[m msm: kgsl: Use dma_buf_get() to get dma_buf structure
+[33m263eed3a7659[m net: ipc_router: Add bounds check on tx path
+[33mb6f3e42c8d2d[m msm: ADSPRPC: Restrict untrusted applications from attaching to GuestOS
+[33m1b33fc1b4ae0[m msm: kgsl: Remove 'fd' dependency to get dma_buf handle
