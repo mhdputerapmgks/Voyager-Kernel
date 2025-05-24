@@ -20,6 +20,9 @@
 #include <linux/susfs_def.h>
 #endif
 #include <linux/ctype.h>
+#ifdef CONFIG_KSU_SUSFS_SUS_KSTAT
+#include <linux/susfs_def.h>
+#endif
 
 #include <asm/elf.h>
 #include <asm/uaccess.h>
