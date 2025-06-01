@@ -1,10 +1,14 @@
 #!/bin/bash
 
 # === Konfigurasi ===
-ANYKERNEL_DIR="kernwl"
+ANYKERNEL_DIR="AnyKernel3"
 OUTPUT_ZIP="Kernel-$(date +%Y%m%d-%H%M).zip"
-BOT_TOKEN="isi_token_bot_kamu"
-CHAT_ID="isi_chat_id_atau_channel_id_kamu"  # Misal: 123456789 atau @namachannel
+BOT_TOKEN="-"
+CHAT_ID="-"  # Misal: 123456789 atau @namachannel
+
+# Lokasi hasil build kernel, sesuaikan dengan folder build kamu
+KERNEL_BUILD_DIR="out/arch/arm64/boot"
+IMAGE_DTB="Image.gz-dtb"
 
 # === Pengecekan awal ===
 if [ ! -d "$ANYKERNEL_DIR" ]; then
@@ -16,6 +20,15 @@ if [ -z "$BOT_TOKEN" ] || [ -z "$CHAT_ID" ]; then
     echo "[!] BOT_TOKEN atau CHAT_ID belum diisi!"
     exit 1
 fi
+
+# Pastikan file Image.gz-dtb ada
+if [ ! -f "$KERNEL_BUILD_DIR/$IMAGE_DTB" ]; then
+    echo "[!] File $IMAGE_DTB tidak ditemukan di $KERNEL_BUILD_DIR!"
+    exit 1
+fi
+
+# Copy Image.gz-dtb ke AnyKernel3
+cp "$KERNEL_BUILD_DIR/$IMAGE_DTB" "$ANYKERNEL_DIR/"
 
 # === Packing ZIP ===
 echo "[*] Mem-packing AnyKernel3 ke ZIP..."
