@@ -2,11 +2,11 @@
 
 # === Konfigurasi ===
 ANYKERNEL_DIR="AnyKernel3"
-OUTPUT_ZIP="Kernel-$(date +%Y%m%d-%H%M).zip"
+OUTPUT_ZIP="Voyager-Kernel-Non-Trele-$(date +%Y%m%d-%H%M).zip"
 BOT_TOKEN="-"
-CHAT_ID="-"  # Misal: 123456789 atau @namachannel
+CHAT_ID="-"
 
-# Lokasi hasil build kernel, sesuaikan dengan folder build kamu
+# Lokasi hasil build kernel
 KERNEL_BUILD_DIR="out/arch/arm64/boot"
 IMAGE_DTB="Image.gz-dtb"
 
@@ -21,7 +21,6 @@ if [ -z "$BOT_TOKEN" ] || [ -z "$CHAT_ID" ]; then
     exit 1
 fi
 
-# Pastikan file Image.gz-dtb ada
 if [ ! -f "$KERNEL_BUILD_DIR/$IMAGE_DTB" ]; then
     echo "[!] File $IMAGE_DTB tidak ditemukan di $KERNEL_BUILD_DIR!"
     exit 1
@@ -38,12 +37,19 @@ cd ..
 
 echo "[+] ZIP berhasil dibuat: $OUTPUT_ZIP"
 
-# === Mengirim ke Telegram ===
+# === Caption Telegram ===
+CAPTION="📦 New Build Voyager
+🧾 File: $OUTPUT_ZIP
+📝 Changelog:
+• Compile with Clang 15
+• Merge CAF tag LA.UM.8.6.2.c29-07900-89xx.0"
+
+# === Kirim ke Telegram ===
 echo "[*] Mengirim ZIP ke Telegram..."
 
-curl -F document=@"$OUTPUT_ZIP" \
+curl -s -F document=@"$OUTPUT_ZIP" \
      -F chat_id="$CHAT_ID" \
-     -F caption="📦 Build Kernel Baru\n🧾 File: $OUTPUT_ZIP" \
+     -F caption="$CAPTION" \
      "https://api.telegram.org/bot$BOT_TOKEN/sendDocument"
 
-echo "[+] File berhasil dikirim ke Telegram."
+echo
