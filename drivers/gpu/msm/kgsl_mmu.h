@@ -103,8 +103,10 @@ struct kgsl_mmu_pt_ops {
 	int (*set_svm_region)(struct kgsl_pagetable *, uint64_t, uint64_t);
 	int (*svm_range)(struct kgsl_pagetable *, uint64_t *, uint64_t *,
 			uint64_t);
+
 	bool (*addr_in_range)(struct kgsl_pagetable *pagetable, uint64_t,
 			uint64_t);
+
 	int (*mmu_map_offset)(struct kgsl_pagetable *pt,
 			uint64_t virtaddr, uint64_t virtoffset,
 			struct kgsl_memdesc *memdesc, uint64_t physoffset,
